@@ -359,7 +359,8 @@ def clean_up_data_biopy(raw_data):
         secStruct = analyzed_seq.secondary_structure_fraction() # tuple of three floats (helix, turn, sheet)
         secStruct_disorder = 1 - sum(secStruct)
         flex_stat = (np.mean(flex), np.std(flex), np.var(flex), np.max(flex), np.min(flex), np.median(flex))
-        temp_df = pd.DataFrame([[seq, *aa_values, mw, aromat, instab, *flex_stat, iso, *secStruct, secStruct_disorder]])
+        gravy = analyzed_seq.gravy()
+        temp_df = pd.DataFrame([[seq, *aa_values, mw, aromat, instab, *flex_stat, iso, *secStruct, secStruct_disorder, gravy]])
         
 
         if first_pass:
@@ -373,7 +374,7 @@ def clean_up_data_biopy(raw_data):
     names_aa = ['frac_aa_' + i for i in aa_list]
     col_names = ['Sequence', *names_aa, 'molecular_weight', 'aromaticity', 'instability_index', 'flexibility_mean', 'flexibility_std', 'flexibility_var',
                  'flexibility_max', 'flexibility_min', 'flexibility_median', 'isoelectric_point', 'secondary_structure_fraction_helix',
-                 'secondary_structure_fraction_turn', 'secondary_structure_fraction_sheet', 'secondary_structure_fraction_disordered']
+                 'secondary_structure_fraction_turn', 'secondary_structure_fraction_sheet', 'secondary_structure_fraction_disordered', 'gravy']
         
     seq_data.columns = col_names
     seq_data=seq_data.reset_index(drop=True)

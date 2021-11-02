@@ -248,10 +248,15 @@ def netsurfp_2_data_processing(unique_id_list, complete_netsurfp_df):
         else:
             nonpolar_exposed_frac_exposed = nonpolar_counts / exposed_count
             nonpolar_exposed_frac_total = nonpolar_counts / total_aa
+
+        polar_exposed_frac_exposed = (exposed_count-nonpolar_counts) / exposed_count
+        polar_exposed_frac_total = (total_aa-nonpolar_counts) / total_aa
             
         data_to_update ={'entry': i, 'fraction_exposed':np.around(frac_exposed, 3), 'fraction_buried': np.around(frac_buried, 3),
                         'fraction_exposed_nonpolar_total':nonpolar_exposed_frac_total,
                         'fraction_exposed_nonpolar_exposed':nonpolar_exposed_frac_exposed,
+                        'fraction_exposed_polar_total':polar_exposed_frac_total,
+                        'fraction_exposed_polar_exposed':polar_exposed_frac_exposed,
                         "rsa_mean": np.around(filtered['rsa'].mean(), 3),
                         "rsa_median": np.around(filtered['rsa'].median(), 3),
                         "rsa_std": np.around(filtered['rsa'].std(), 3),
