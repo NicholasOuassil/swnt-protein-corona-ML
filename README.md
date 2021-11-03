@@ -1,7 +1,8 @@
 # swnt-protein-corona-ML
 Ensemble classifiers and data scraping tools for the prediction of protein surface adsorption to single-walled carbon nanotubes
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5640140.svg)](https://doi.org/10.5281/zenodo.5640140)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5640140.svg)](https://doi.org/10.5281/zenodo.5640140)   [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5641450.svg)](https://doi.org/10.5281/zenodo.5641450)
+
 
 Codebase to pair with "Supervised Learning Model Predicts Protein Adsorption to Carbon Nanotubes" by Nicholas Ouassil*, Rebecca L. Pinals*, Jackson Travis Del Bonis-O'Donnell, Jeffrey W. Wang, and Markita P. Landry in [*biorXiv*](https://doi.org/10.1101/2021.06.19.449132) 
 
